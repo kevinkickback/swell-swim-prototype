@@ -1,0 +1,187 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  color: #082344;
+  background: #fff;
+  --ink: #082344;
+  --blue: #0753d8;
+  --line: #b9d3ef;
+  --gutter: clamp(1.25rem, 6vw, 6.5rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, p, figure, ul { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+
+.masthead, .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 1rem var(--gutter);
+}
+
+.masthead { border-bottom: 1px solid var(--line); }
+.masthead > span, .footer { font-size: 0.8rem; }
+
+.wordmark {
+  font-size: clamp(1.55rem, 2.7vw, 2.15rem);
+  font-weight: 850;
+  letter-spacing: -0.085em;
+  text-decoration: none;
+}
+
+.wordmark span { color: var(--blue); }
+.footer { border-top: 1px solid var(--line); }
+
+.eyebrow {
+  margin-bottom: 0.85rem;
+  color: var(--blue);
+  font-size: 0.8rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(2.75rem, 6vw, 6.75rem);
+  font-weight: 850;
+  letter-spacing: -0.085em;
+  line-height: 0.96;
+  text-wrap: balance;
+}
+
+h1 + p, h2 + p {
+  max-width: 37ch;
+  margin-top: 1rem;
+  line-height: 1.55;
+}
+
+.gift-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gift-photo figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 0.45rem 0.65rem;
+  color: #fff;
+  background: #082344;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+/* Diagonal ad */
+.diagonal > main { display: flex; }
+
+.diagonal-hero {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: 1fr auto auto 1fr;
+  grid-template-areas: ". art" "copy art" "purchase art" ". art";
+  column-gap: clamp(1rem, 4vw, 4rem);
+  padding: clamp(1.5rem, 4svh, 4rem) var(--gutter);
+  overflow: hidden;
+  background: linear-gradient(130deg, #fff 56%, #dceeff 56%, #6ab0ff 100%);
+}
+
+.diagonal-copy { grid-area: copy; }
+.diagonal-checkout { grid-area: purchase; align-self: start; }
+.diagonal h1 { max-width: 10ch; text-wrap: initial; }
+.diagonal-copy { animation: arrive 450ms ease-out both; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 1.2rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+  font-weight: 750;
+}
+
+.tags li::before { content: "+"; margin-right: 0.35em; color: var(--blue); }
+.diagonal-art {
+  position: relative;
+  grid-area: art;
+  place-self: center;
+  width: min(100%, 52rem, max(15rem, calc(100svh - 13.5rem)));
+}
+
+.diagonal-art .gift-photo {
+  aspect-ratio: 1;
+  border: 0.45rem solid #fff;
+  border-radius: 36% 4% 30% 4%;
+  box-shadow: 0 1rem 3rem #08234429;
+}
+
+.sticker {
+  position: absolute;
+  top: -1.5rem;
+  right: -0.75rem;
+  display: grid;
+  place-content: center;
+  width: clamp(6.5rem, 13vw, 10rem);
+  aspect-ratio: 1;
+  padding: 0.75rem;
+  border: 0.3rem solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--blue);
+  text-align: center;
+  transform: rotate(9deg);
+  animation: sticker-in 500ms 120ms ease-out both;
+}
+
+.sticker strong { font-size: clamp(1.75rem, 3.4vw, 3.5rem); line-height: 1; }
+.sticker span { font-size: clamp(0.65rem, 1.1vw, 0.88rem); font-weight: 700; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .diagonal[data-motion="enhanced"] .diagonal-art {
+    transform-origin: center 56%;
+    animation: stocking-rock 6.5s ease-in-out 750ms infinite;
+  }
+
+  @keyframes stocking-rock {
+    0%, 50%, 100% { transform: translateX(0) rotate(0); }
+    25% { transform: translateX(-0.35rem) rotate(-1.5deg); }
+    75% { transform: translateX(0.35rem) rotate(1.5deg); }
+  }
+}
+
+@keyframes arrive {
+  from { transform: translateY(0.45rem); }
+  to { transform: translateY(0); }
+}
+
+@keyframes sticker-in {
+  from { transform: translateY(0.45rem) rotate(3deg); }
+  to { transform: rotate(9deg); }
+}
+
+@media (max-width: 740px) {
+  .diagonal-hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "copy" "art" "purchase";
+    gap: 1.5rem;
+    background: linear-gradient(145deg, #fff 55%, #dceeff 55%, #6ab0ff);
+  }
+  .diagonal-art { width: min(100%, 31rem); margin-top: 0.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diagonal-copy, .sticker { animation: none; }
+}

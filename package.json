@@ -1,0 +1,8 @@
+{
+  "name": "swell-swim-prototype",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview:pages": "node scripts/preview-pages.mjs"
+  }
+}
