@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" class="current-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Current · Swell Swim Admin</title>
+  <link rel="stylesheet" href="../admin-dashboard/dashboard.css">
+  <link rel="stylesheet" href="./shift-log.css">
+  <script type="module" src="../admin-dashboard/dashboard.js"></script>
+</head>
+<body class="log" data-theme="shift-log">
+  <a class="skip" href="#workspace">Skip to workspace</a>
+  <div class="log-frame">
+    <header class="log-header">
+      <a class="log-brand" href="#overview"><span class="log-mark" aria-hidden="true">≋</span> Swell Swim</a>
+      <nav aria-label="Dashboard sections"></nav>
+      <a class="log-back" href="../../#admin">← Prototype library</a>
+    </header>
+    <div class="log-content">
+      <main id="workspace" tabindex="-1">
+        <div class="log-toolbar"><span class="demo"><i></i> Demo data</span><label class="theme-picker">Theme <select id="dashboard-theme"></select></label></div>
+        <div class="page-head">
+          <div><h1 id="page-title">The Current</h1><p id="page-description"></p></div>
+          <label id="period-control" class="select-wrap"><span class="sr-only">Reporting period</span><span data-icon="calendar"></span><select id="period"><option value="7">Last 7 days</option><option value="14">Last 14 days</option></select></label>
+        </div>
+        <div id="view"></div>
+        <noscript>Enable JavaScript to explore the sample dashboard.</noscript>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -28,6 +28,8 @@ jobs:
           test -s public/prototypes/v1/index.html
           test -s public/prototypes/product-ad/index.html
           test -s public/assets/gift-checkout.js
+      - name: Version dashboard assets
+        run: node scripts/version-dashboard-assets.mjs "$GITHUB_SHA"
       - name: Upload static site
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         with:

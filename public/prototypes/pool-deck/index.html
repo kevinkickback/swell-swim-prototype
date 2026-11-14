@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pool Deck · Swell Swim Admin</title>
+  <link rel="stylesheet" href="../admin-dashboard/dashboard.css">
+  <link rel="stylesheet" href="../../assets/admin-concepts.css">
+  <script type="module" src="../admin-dashboard/dashboard.js"></script>
+</head>
+<body class="deck concept" data-theme="pool-deck">
+  <a class="skip" href="#workspace">Skip to workspace</a>
+  <header class="concept-header">
+    <a class="concept-brand" href="#overview">Swell Swim<span aria-hidden="true"> ≋</span></a>
+    <div class="concept-controls">
+      <label class="theme-picker">Theme <select id="dashboard-theme"></select></label>
+      <span class="demo"><i></i> Demo data</span>
+      <a href="../../#admin">Prototype library</a>
+    </div>
+    <nav aria-label="Dashboard sections"></nav>
+  </header>
+  <main id="workspace" tabindex="-1">
+    <div class="page-head">
+      <div><h1 id="page-title">Pool Deck</h1><p id="page-description"></p></div>
+      <label id="period-control" class="select-wrap"><span class="sr-only">Reporting period</span><span data-icon="calendar"></span><select id="period"><option value="7">Last 7 days</option><option value="14">Last 14 days</option></select></label>
+    </div>
+    <div id="view"></div>
+    <noscript>Enable JavaScript to explore the sample dashboard.</noscript>
+  </main>
+</body>
+</html>

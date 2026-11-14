@@ -2,7 +2,7 @@
 
 [Open the prototype gallery](https://kevinkickback.github.io/swell-swim-prototype/)
 
-Four Black Friday swim lesson designs with sample prices, demo checkout, and printable vouchers.
+Three admin dashboard concepts with shared synthetic operations data, plus four Black Friday swim lesson designs with sample prices, demo checkout, and printable vouchers.
 
 ## Run locally
 
